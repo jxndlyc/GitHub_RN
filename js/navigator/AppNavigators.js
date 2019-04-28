@@ -23,13 +23,14 @@ const MainNavigator = createStackNavigator({
     HomePage: {
         screen: HomePage,
         navigationOptions: {
-            header: null,
+            header: null,//可以通过将header设为null, 来禁用StackNavigation bar
         },
     },
     DetailPage: {
         screen: DetailPage,
         navigationOptions: {
-            header: null,
+            //header: null,//可以通过将header设为null, 来禁用StackNavigation bar
+            tabBarLabel:"详情",
         },
     },
 
