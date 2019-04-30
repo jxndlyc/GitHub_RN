@@ -90,8 +90,8 @@ export default class PopularPage extends Component<Props> {
             )
         );
 
-        return <View style={{flex: 1, marginTop: 20}}>
-            <StatusBar backgroundColor={'#678'} translucent={true} animated={true} barStyle={'dark-content'}/>
+        return <View style={{flex: 1, marginTop: 0}}>
+            <StatusBar backgroundColor={'#678'} translucent={false} animated={true} barStyle={'default'}/>
             <TabNavigator/>
         </View>
 

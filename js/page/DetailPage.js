@@ -7,12 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 
 export default class DetailPage extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar translucent={false} animated={true} barStyle={'default'}/>
                 <Text style={styles.welcome}>DetailPage</Text>
             </View>
         );
