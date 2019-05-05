@@ -8,6 +8,7 @@ import {
 import WelcomePage from "../page/WelcomePage";
 import HomePage from "../page/HomePage";
 import DetailPage from "../page/DetailPage";
+import FetchDemoPage from "../page/FetchDemoPage";
 import {connect} from "react-redux";
 import {createReactNavigationReduxMiddleware, createReduxContainer} from "react-navigation-redux-helpers";
 
@@ -32,6 +33,13 @@ const MainNavigator = createStackNavigator({
     },
     DetailPage: {
         screen: DetailPage,
+        navigationOptions: {
+            //header: null,//可以通过将header设为null, 来禁用StackNavigation bar
+            tabBarLabel: "详情",
+        },
+    },
+    FetchDemoPage: {
+        screen: FetchDemoPage,
         navigationOptions: {
             //header: null,//可以通过将header设为null, 来禁用StackNavigation bar
             tabBarLabel: "详情",

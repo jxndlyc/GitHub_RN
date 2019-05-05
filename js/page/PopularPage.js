@@ -7,13 +7,14 @@
  */
 
 import React, {Component} from 'react';
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, View, Button} from 'react-native';
 import {
     createMaterialTopTabNavigator,
     createAppContainer,
 } from "react-navigation";
 import NavigationUtil from "../navigator/NavigationUtil";
 import DetailPage from "./DetailPage";
+import FetchDemoPage from "./FetchDemoPage";
 
 
 export default class PopularPage extends Component<Props> {
@@ -61,7 +62,7 @@ export default class PopularPage extends Component<Props> {
 
         this.tabNames.forEach((item, index) => {
             console.log("index:" + index + ", item:" + item);
-            const  tab = "tab" + index;
+            const tab = "tab" + index;
             tabs[`tab${index}`] = {
                 screen: props => <PopularTab {...props} tabLabel={item}/>,
                 navigationOptions: {
@@ -110,6 +111,13 @@ class PopularTab extends Component<Props> {
                               navigation: this.props.navigation,
                           }, "DetailPage")
                       }}>点击跳转详情页</Text>
+                <Button
+                    title={"Fetch使用"}
+                    onPress={() => {
+                        NavigationUtil.goPage({
+                            navigation: this.props.navigation,
+                        }, "FetchDemoPage")
+                    }}/>
             </View>
         );
     }
