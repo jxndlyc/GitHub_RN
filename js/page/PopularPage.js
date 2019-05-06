@@ -15,6 +15,7 @@ import {
 import NavigationUtil from "../navigator/NavigationUtil";
 import DetailPage from "./DetailPage";
 import FetchDemoPage from "./FetchDemoPage";
+import AsyncStorageDemoPage from "./AsyncStorageDemoPage";
 
 
 export default class PopularPage extends Component<Props> {
@@ -112,11 +113,20 @@ class PopularTab extends Component<Props> {
                           }, "DetailPage")
                       }}>点击跳转详情页</Text>
                 <Button
+                    style={styles.button_popular}
                     title={"Fetch使用"}
                     onPress={() => {
                         NavigationUtil.goPage({
                             navigation: this.props.navigation,
                         }, "FetchDemoPage")
+                    }}/>
+                <Button
+                    style={styles.button_popular}
+                    title={"AsyncStorage使用"}
+                    onPress={() => {
+                        NavigationUtil.goPage({
+                            navigation: this.props.navigation,
+                        }, "AsyncStorageDemoPage")
                     }}/>
             </View>
         );
@@ -126,7 +136,6 @@ class PopularTab extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
@@ -144,6 +153,9 @@ const styles = StyleSheet.create({
     labelStyle: {
         fontSize: 13,
         textAlign: 'center',
+    },
+    button_popular: {
+        marginTop:10,
     },
 
 });
