@@ -16,6 +16,7 @@ import NavigationUtil from "../navigator/NavigationUtil";
 import DetailPage from "./DetailPage";
 import FetchDemoPage from "./FetchDemoPage";
 import AsyncStorageDemoPage from "./AsyncStorageDemoPage";
+import DataStoreDemoPage from "./DataStoreDemoPage";
 
 
 export default class PopularPage extends Component<Props> {
@@ -106,12 +107,15 @@ class PopularTab extends Component<Props> {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>进入：{tabLabel}</Text>
+
                 <Text style={styles.welcome}
                       onPress={() => {
                           NavigationUtil.goPage({
                               navigation: this.props.navigation,
                           }, "DetailPage")
                       }}>点击跳转详情页</Text>
+
+                <View style={{height: 20}}/>
                 <Button
                     style={styles.button_popular}
                     title={"Fetch使用"}
@@ -120,6 +124,7 @@ class PopularTab extends Component<Props> {
                             navigation: this.props.navigation,
                         }, "FetchDemoPage")
                     }}/>
+                <View style={{height: 20}}/>
                 <Button
                     style={styles.button_popular}
                     title={"AsyncStorage使用"}
@@ -127,6 +132,15 @@ class PopularTab extends Component<Props> {
                         NavigationUtil.goPage({
                             navigation: this.props.navigation,
                         }, "AsyncStorageDemoPage")
+                    }}/>
+                <View style={{height: 20}}/>
+                <Button
+                    style={styles.button_popular}
+                    title={"离线缓存"}
+                    onPress={() => {
+                        NavigationUtil.goPage({
+                            navigation: this.props.navigation,
+                        }, "DataStoreDemoPage")
                     }}/>
             </View>
         );
@@ -137,6 +151,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#F5FCFF',
     },
     welcome: {
@@ -155,7 +170,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     button_popular: {
-        marginTop:10,
+        marginTop: 10,
+
     },
 
 });

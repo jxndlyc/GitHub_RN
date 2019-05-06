@@ -10,6 +10,7 @@ import HomePage from "../page/HomePage";
 import DetailPage from "../page/DetailPage";
 import FetchDemoPage from "../page/FetchDemoPage";
 import AsyncStorageDemoPage from "../page/AsyncStorageDemoPage";
+import DataStoreDemoPage from "../page/DataStoreDemoPage";
 import {connect} from "react-redux";
 import {createReactNavigationReduxMiddleware, createReduxContainer} from "react-navigation-redux-helpers";
 
@@ -51,6 +52,13 @@ const MainNavigator = createStackNavigator({
         navigationOptions: {
             //header: null,//可以通过将header设为null, 来禁用StackNavigation bar
             tabBarLabel: "本地存储",
+        },
+    },
+    DataStoreDemoPage: {
+        screen: DataStoreDemoPage,
+        navigationOptions: {
+            //header: null,//可以通过将header设为null, 来禁用StackNavigation bar
+            tabBarLabel: "离线缓存",
         },
     },
 
