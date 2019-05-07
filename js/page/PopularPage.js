@@ -15,6 +15,7 @@ import {
 import NavigationUtil from "../navigator/NavigationUtil";
 import {connect} from 'react-redux';
 import actions from '../action/index';
+import PopularItem from '../common/PopularItem'
 
 const THEME_COLOR = 'red';
 const URL = `https://api.github.com/search/repositories?q=`;
@@ -125,11 +126,12 @@ class PopularTab extends Component<Props> {
 
     renderItem(data) {
         const item = data.item;
-        return <View style={{marginBottom: 10}}>
-            <Text style={{backgroundColor: "#FAA"}}>
-                {JSON.stringify(item)}
-            </Text>
-        </View>
+        return <PopularItem
+            item={item}
+            onSelect={() => {
+
+            }}
+        />
     }
 
     render() {
